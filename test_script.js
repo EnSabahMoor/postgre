@@ -10,16 +10,6 @@ const client = new pg.Client({
   ssl      : settings.ssl
 });
 
-var knex = require('knex')({
-  client: 'mysql',
-  connection: {
-    host : '127.0.0.1',
-    user : 'settings.user',
-    password : 'settings.password',
-    database : 'settings.database'
-  }
-});
-
 client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
